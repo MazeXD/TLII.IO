@@ -209,6 +209,10 @@ namespace Txt2Raw.Converters
                         throw new TxtConverterException(String.Format("RarityHC must be a 32bit Integer. (Line: {0} | Current: {1})", lineNumber, line));
                     }
                 }
+				else if(line.StartsWith("//") || line.StartsWith("#"))
+				{
+					continue;
+				}
                 else
                 {
                     throw new TxtConverterException(String.Format("Unknown unit property. (Line: {0})", lineNumber));

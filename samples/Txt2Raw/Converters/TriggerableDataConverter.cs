@@ -67,6 +67,10 @@ namespace Txt2Raw.Converters
                     triggerable.File = line;
                     hasSet[1] = true;
                 }
+				else if(line.StartsWith("//") || line.StartsWith("#"))
+				{
+					continue;
+				}
                 else
                 {
                     throw new TxtConverterException(String.Format("Unknown unit property. (Line: {0})", lineNumber));

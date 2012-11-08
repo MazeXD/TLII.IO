@@ -70,6 +70,10 @@ namespace Txt2Raw.Converters
                         {
                             break;
                         }
+						else if(line.StartsWith("//") || line.StartsWith("#"))
+						{
+							continue;
+						}
                         else
                         {
                             line = line.Replace("<INTEGER64>", "").Trim();
@@ -86,6 +90,10 @@ namespace Txt2Raw.Converters
                         }
                     }
                 }
+				else if(line.StartsWith("//") || line.StartsWith("#"))
+				{
+					continue;
+				}
                 else
                 {
                     throw new TxtConverterException(String.Format("Unknown unit property. (Line: {0})", lineNumber));
