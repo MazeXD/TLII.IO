@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TLII.IO.Formats.Raw.Data;
-using TLII.IO.Formats.Raw;
-using Txt2Raw.Exceptions;
 using System.IO;
+using TLII.IO.Formats.Raw;
+using TLII.IO.Formats.Raw.Data;
+using Txt2Raw.Exceptions;
 
 namespace Txt2Raw.Converters
 {

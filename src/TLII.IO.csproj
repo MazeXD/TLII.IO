@@ -41,7 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdmWriter.cs" />
+    <Compile Include="Contexts\AdmReadingContext.cs" />
+    <Compile Include="Exceptions\AdmReaderException.cs" />
+    <Compile Include="Exceptions\AdmWriterException.cs" />
     <Compile Include="Exceptions\RawReaderException.cs" />
+    <Compile Include="AdmReader.cs" />
+    <Compile Include="Formats\Adm\AdmBlock.cs" />
+    <Compile Include="Formats\Adm\AdmData.cs" />
+    <Compile Include="Formats\Adm\AdmField.cs" />
+    <Compile Include="Formats\Adm\AdmFieldType.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmBooleanField.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmDoubleField.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmFloatField.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmInteger64Field.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmIntegerField.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmStringField.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmTranslateField.cs" />
+    <Compile Include="Formats\Adm\Fields\AdmUnsignedIntegerField.cs" />
     <Compile Include="Formats\Raw\AffixData.cs" />
     <Compile Include="Formats\Raw\Data\Affix.cs" />
     <Compile Include="Formats\Raw\MissileData.cs" />
@@ -61,7 +78,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawReader.cs" />
     <Compile Include="RawWriter.cs" />
+    <Compile Include="Utilities\GUIDUtility.cs" />
+    <Compile Include="Utilities\HashUtility.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
