@@ -17,6 +17,7 @@ namespace Txt2Raw.Converters
             string line = "";
             int lineNumber = 0;
 
+
             while ((line = reader.ReadLine()) != null)
             {
                 lineNumber++;
@@ -30,6 +31,9 @@ namespace Txt2Raw.Converters
                     affixData.Affixes.Add(ReadAffix(ref reader, ref lineNumber));
                 }
             }
+
+            reader.Close();
+            reader.Dispose();
 
             return affixData;
         }

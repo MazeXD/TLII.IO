@@ -31,6 +31,9 @@ namespace Txt2Raw.Converters
                 }
             }
 
+            reader.Close();
+            reader.Dispose();
+
             return missileData;
         }
 

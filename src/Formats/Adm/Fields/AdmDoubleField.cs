@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(double))
+                if (value is double)
                 {
                     _value = (double)value;
                 }

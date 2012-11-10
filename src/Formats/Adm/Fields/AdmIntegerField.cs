@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(int))
+                if (value is int)
                 {
                     _value = (int)value;
                 }

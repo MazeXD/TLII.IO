@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(bool))
+                if (value is bool)
                 {
                     _value = (bool)value;
                 }

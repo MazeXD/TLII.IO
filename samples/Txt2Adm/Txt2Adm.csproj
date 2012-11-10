@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ADAF995A-7A5D-47B6-904A-45004D3C2867}</ProjectGuid>
+    <ProjectGuid>{C4683436-CE77-4176-80D0-2AC555653CAA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Raw2Txt</RootNamespace>
-    <AssemblyName>Raw2Txt</AssemblyName>
+    <RootNamespace>Txt2Adm</RootNamespace>
+    <AssemblyName>Txt2Adm</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -26,13 +26,12 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
-    <DebugType>none</DebugType>
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -47,13 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\AffixDataConverter.cs" />
-    <Compile Include="Converters\MissileDataConverter.cs" />
-    <Compile Include="Converters\RoomPieceDataConverter.cs" />
-    <Compile Include="Converters\SkillDataConverter.cs" />
-    <Compile Include="Converters\TriggerableDataConverter.cs" />
-    <Compile Include="Converters\UnitDataConverter.cs" />
-    <Compile Include="Converters\UserInterfaceDataConverter.cs" />
+    <Compile Include="Contexts\AdmConverterContext.cs" />
+    <Compile Include="Converters\AdmDataConverter.cs" />
+    <Compile Include="Exceptions\AdmConverterException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

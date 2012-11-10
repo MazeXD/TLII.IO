@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Txt2Raw")]
-[assembly: AssemblyDescription("A tool used for converting txt files to TLII raw files")]
+[assembly: AssemblyTitle("Adm2Txt")]
+[assembly: AssemblyDescription("A tool used for converting TLII adm files to txt files")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Txt2Raw")]
-[assembly: AssemblyCopyright("Copyright ©  MazeXD 2012")]
+[assembly: AssemblyProduct("Adm2Txt")]
+[assembly: AssemblyCopyright("Copyright © MazeXD 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cc0b3f16-3297-41ac-b0de-977cb022e175")]
+[assembly: Guid("26dee035-d487-4b4c-8f62-c493a901bd70")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0")]
-[assembly: AssemblyFileVersion("1.1.0")]
+[assembly: AssemblyVersion("1.0.1")]
+[assembly: AssemblyFileVersion("1.0.1")]

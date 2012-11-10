@@ -1,6 +1,6 @@
 ﻿namespace TLII.IO.Formats.Adm.Fields
 {
-    class AdmTranslateField : AdmField
+    public class AdmTranslateField : AdmField
     {
         private string _value;
 
@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(string))
+                if (value is string)
                 {
                     _value = (string)value;
                 }

@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(float))
+                if (value is float)
                 {
                     _value = (float)value;
                 }

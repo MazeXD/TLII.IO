@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(long))
+                if (value is long)
                 {
                     _value = (long)value;
                 }

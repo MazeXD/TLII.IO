@@ -7,7 +7,7 @@
             int hash = str.Length;
             foreach (var c in str)
             {
-                hash = (hash >> 27) ^ (hash << 5) ^ c;
+                hash = (int)((uint)hash >> 27) ^ (hash << 5) ^ c;
             }
 
             return hash;

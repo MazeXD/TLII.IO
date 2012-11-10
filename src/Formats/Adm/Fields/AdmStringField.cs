@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(string))
+                if (value is string)
                 {
                     _value = (string)value;
                 }

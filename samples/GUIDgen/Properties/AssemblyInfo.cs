@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Txt2Raw")]
-[assembly: AssemblyDescription("A tool used for converting txt files to TLII raw files")]
+[assembly: AssemblyTitle("GUIDgen")]
+[assembly: AssemblyDescription("A tool to generate TLII compatible GUIDs")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Txt2Raw")]
-[assembly: AssemblyCopyright("Copyright ©  MazeXD 2012")]
+[assembly: AssemblyProduct("GUIDgen")]
+[assembly: AssemblyCopyright("Copyright © MazeXD 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cc0b3f16-3297-41ac-b0de-977cb022e175")]
+[assembly: Guid("1d784fff-320a-4663-b20c-f554eb37f5b1")]
 
 // Version information for an assembly consists of the following four values:
 //

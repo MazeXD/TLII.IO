@@ -17,7 +17,7 @@
             }
             set
             {
-                if (value.GetType() == typeof(uint))
+                if (value is uint)
                 {
                     _value = (uint)value;
                 }
