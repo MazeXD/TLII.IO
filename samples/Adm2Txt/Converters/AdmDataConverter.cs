@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using Adm2Txt.KeyTables;
 using TLII.IO.Formats.Adm;
-using System.Globalization;
 
 namespace Adm2Txt.Converters
 {
@@ -14,6 +14,7 @@ namespace Adm2Txt.Converters
         static AdmDataConverter()
         {
             new ResourceKeyTableSource("KeyTable.txt").AddToKeyTable(ref _keyTable);
+            new FileKeyTableSource("keytable.txt").AddToKeyTable(ref _keyTable);
         }
 
         public static string GetString(AdmData data)
