@@ -1,4 +1,7 @@
 TLII.IO is a .Net library used for manipulating TLII
 files.
 
-Supports raw and adm(animation, dat, hye & template) files.
+Supports
+ - raw files
+ - adm file (animation, dat, hie, template)
+ - pak file (for now only extracting)
