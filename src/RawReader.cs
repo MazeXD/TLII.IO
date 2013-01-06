@@ -18,6 +18,7 @@ namespace TLII.IO
         private BinaryReader _reader;
         private Encoding _encoding = Encoding.GetEncoding(1200); // UTF16-LE
         private RawType _type;
+        protected string _filename;
         private bool _disposed = false;
 
         #endregion
@@ -31,6 +32,7 @@ namespace TLII.IO
                 throw new FileNotFoundException("The file doesn't exist!", fileName);
             }
 
+            bool handled = true;
             string name = Path.GetFileNameWithoutExtension(fileName);
             switch (name.ToUpperInvariant())
             {
@@ -56,8 +58,20 @@ namespace TLII.IO
                     _type = RawType.UserInterfaceData;
                     break;
                 default:
-                    throw new RawReaderException(String.Format("That type of raw file [{0}] is not supported.", name));
+                    handled = false;
+                    break;
             }
+
+            if (!handled) {
+                if (name.StartsWith("UNITDATA")) {
+                    _type = RawType.UnitData;
+                    handled = true;
+                } else {
+                    throw new RawReaderException(String.Format("That type of raw file [{0}] is not supported.\r\nNote: for custom UNITDATA files, name has to start with 'UNITDATA'.", name));
+                }
+            }
+
+            _filename = fileName;
 
             byte[] data = File.ReadAllBytes(fileName);
 

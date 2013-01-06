@@ -117,7 +117,7 @@ namespace Txt2Raw
                     {
                         continue;
                     }
-                    else if (!_supportedTypes.Contains(name.ToUpperInvariant()) || !File.Exists(file))
+                    else if (!IsValidFileName(name) || !File.Exists(file))
                     {
                         _unsupportedFiles.Add(arg);
                     }
@@ -127,6 +127,22 @@ namespace Txt2Raw
                     }
                 }
             }
+        }
+
+        private static bool IsValidFileName(string name) {
+            bool isValid = false;
+            isValid = _supportedTypes.Contains(name.ToUpperInvariant());
+            if (!isValid) {
+                // Include naming scheme exceptions here.
+                // For example: UNITDATA.RAW when customized should be renamed to be unique to each modder.
+                // See also: http://forums.runicgames.com/viewtopic.php?f=47&t=48200
+                // This code is duplicated in Raw2Txt.Program, so ideally, it should be refactored into
+                // a Validator class to be put into TLII.IO Utilities.
+                if (name.StartsWith("UNITDATA")) {
+                    isValid = true;
+                }
+            }
+            return isValid;
         }
 
         private static void ConvertFile(string fileName)
@@ -176,7 +192,7 @@ namespace Txt2Raw
             string outputPath = _outputDir != "" ? _outputDir : Path.GetDirectoryName(fileName);
 
             RawWriter writer = new RawWriter(rawFile);
-            writer.Write(outputPath);
+            writer.Write(outputPath, Path.GetFileNameWithoutExtension(fileName));
 
             Console.WriteLine("Converted {0} into binary format", Path.GetFileName(fileName));
         }
