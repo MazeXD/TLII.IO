@@ -16,6 +16,7 @@ namespace TLII.IO
         private BinaryWriter _writer;
         private Encoding _encoding = Encoding.GetEncoding(1200); // UTF16-LE
         private RawData _file;
+        private const string _fileExt = ".RAW";
 
         #endregion
 
@@ -30,41 +31,48 @@ namespace TLII.IO
 
         #region METHODS
 
-        public void Write(string path)
+        public void Write(string path, string filename = null)
         {
             _stream = new MemoryStream();
             _writer = new BinaryWriter(_stream);
 
             string name = null;
+            if (filename != null) {
+                // make sure filename has _fileExt extension
+                if (!filename.EndsWith(_fileExt)) {
+                    filename += _fileExt;
+                }
+                name = filename;
+            }
 
             switch (_file.Type)
             {
                 case RawType.UnitData:
-                    name = "UNITDATA.RAW";
+                    name = (name == null ? "UNITDATA.RAW" : name);
                     WriteUnitDataFile((UnitData)_file);
                     break;
                 case RawType.SkillData:
-                    name = "SKILLS.RAW";
+                    name = (name == null ? "SKILLS.RAW" : name);
                     WriteSkillFile((SkillData)_file);
                     break;
                 case RawType.AffixData:
-                    name = "AFFIXES.RAW";
+                    name = (name == null ? "AFFIXES.RAW" : name);
                     WriteAffixDataFile((AffixData)_file);
                     break;
                 case RawType.MissileData:
-                    name = "MISSILES.RAW";
+                    name = (name == null ? "MISSILES.RAW" : name);
                     WriteMissileDataFile((MissileData)_file);
                     break;
                 case RawType.RoomPieceData:
-                    name = "ROOMPIECES.RAW";
+                    name = (name == null ? "ROOMPIECES.RAW" : name);
                     WriteRoomPieceDataFile((RoomPieceData)_file);
                     break;
                 case RawType.TriggerableData:
-                    name = "TRIGGERABLES.RAW";
+                    name = (name == null ? "TRIGGERABLES.RAW" : name);
                     WriteTriggerableDataFile((TriggerableData)_file);
                     break;
                 case RawType.UserInterfaceData:
-                    name = "UI.RAW";
+                    name = (name == null ? "UI.RAW" : name);
                     WriteUserInterfaceDataFile((UserInterfaceData)_file);
                     break;
                 default:
