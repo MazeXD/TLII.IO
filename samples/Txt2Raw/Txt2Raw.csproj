@@ -75,7 +75,7 @@
     <Compile Include="Converters\TriggerableDataConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TLII.IO\TLII.IO.csproj">
+    <ProjectReference Include="..\..\src\TLII.IO.csproj">
       <Project>{8294CA82-A5B0-45DC-8A94-E648846DB1DF}</Project>
       <Name>TLII.IO</Name>
     </ProjectReference>

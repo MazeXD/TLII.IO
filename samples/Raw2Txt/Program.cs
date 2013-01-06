@@ -115,8 +115,7 @@ namespace Raw2Txt
                     if (Path.GetExtension(file).ToUpperInvariant() != ".RAW")
                     {
                         continue;
-                    }
-                    else if (!_supportedTypes.Contains(name.ToUpperInvariant()) || !File.Exists(file))
+                    } else if (!IsValidFileName(name) || !File.Exists(file))
                     {
                         _unsupportedFiles.Add(arg);
                     }
@@ -126,6 +125,20 @@ namespace Raw2Txt
                     }
                 }
             }
+        }
+
+        private static bool IsValidFileName(string name) {
+            bool isValid = false;
+            isValid = _supportedTypes.Contains(name.ToUpperInvariant());
+            if (!isValid) {
+                // include naming scheme exceptions here
+                // for example: UNITDATA.RAW when customized should be renamed to be unique to each modder.
+                // see also: http://forums.runicgames.com/viewtopic.php?f=47&t=48200
+                if (name.StartsWith("UNITDATA")) {
+                    isValid = true;
+                }
+            }
+            return isValid;
         }
 
         private static void ConvertFile(string fileName)
